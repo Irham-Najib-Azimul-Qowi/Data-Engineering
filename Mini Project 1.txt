@@ -1,0 +1,366 @@
+Mini Project: Data Source Analysis
+1. Analisis Data Terstruktur (Structured Data)
+1.1 Deskripsi Sumber Data
+
+Nama Database/Dataset: World Bank GDP Data (Gross Domestic Product per Country)
+
+Format: CSV
+
+Ukuran Data: ± 5–10 MB
+
+Sumber: World Bank Open Data
+https://data.worldbank.org/indicator/NY.GDP.MKTP.CD
+
+(Sample bisa download → CSV)
+
+1.2 Karakteristik
+Schema/Struktur
+
+Dataset memiliki struktur tabel dengan kolom:
+
+Country Name (Text)
+
+Country Code (Text)
+
+Indicator Name (Text)
+
+Indicator Code (Text)
+
+Year (Integer)
+
+GDP Value (Float)
+
+Struktur tetap dan konsisten.
+
+Tipe Data
+
+Text (negara, indikator)
+
+Integer (tahun)
+
+Float (nilai GDP)
+
+Relasi antar Data
+
+Relasi antar negara dan tahun (time-series data)
+
+Setiap negara memiliki data GDP per tahun.
+
+Kualitas Data
+
+Sangat tinggi (divalidasi World Bank)
+
+Missing value pada beberapa negara berkembang.
+
+Frekuensi Update
+
+Tahunan.
+
+1.3 Potensi Use Cases
+Use Case 1
+
+Deskripsi: Analisis pertumbuhan ekonomi negara.
+
+Manfaat Bisnis:
+
+Membantu investor menentukan negara tujuan investasi.
+
+Mendukung perencanaan ekspansi perusahaan global.
+
+Technical Requirements:
+
+SQL / Python / Excel
+
+Data visualization tools (Tableau/PowerBI)
+
+Use Case 2
+
+Deskripsi: Prediksi pertumbuhan ekonomi menggunakan machine learning.
+
+Manfaat Bisnis:
+
+Forecast kondisi pasar global.
+
+Risk management.
+
+Technical Requirements:
+
+Python
+
+Machine learning model
+
+Time series analysis
+
+2. Analisis Data Semi-Terstruktur (Semi-structured Data)
+2.1 Deskripsi Sumber Data
+
+Nama Dataset/File: OpenWeatherMap Weather API Response
+
+Format: JSON
+
+Ukuran Data: ± 1–10 KB per request
+
+Sumber: https://openweathermap.org/api
+
+Sample data bisa diakses:
+https://api.openweathermap.org/data/2.5/weather?q=Jakarta&appid=API_KEY
+
+(API key gratis)
+
+2.2 Karakteristik
+Format Spesifik
+
+JSON (key-value format).
+
+Struktur Data
+
+Struktur nested:
+
+{
+  "weather": [{ "main": "Clouds" }],
+  "main": {
+    "temp": 300.15,
+    "humidity": 80
+  },
+  "wind": { "speed": 2.1 }
+}
+
+Flexibilitas
+
+Bisa berubah sesuai parameter API.
+
+Field tidak selalu sama.
+
+Struktur tidak kaku seperti tabel.
+
+Challenges
+
+Perlu parsing JSON.
+
+Struktur nested kompleks.
+
+Field tidak selalu tersedia.
+
+Aksesibilitas
+
+Real-time via REST API.
+
+HTTP request.
+
+2.3 Potensi Use Cases
+Use Case 1
+
+Deskripsi: Monitoring cuaca real-time untuk logistik.
+
+Manfaat Bisnis:
+
+Optimasi pengiriman.
+
+Mengurangi risiko keterlambatan.
+
+Technical Requirements:
+
+API integration
+
+JSON parsing
+
+Backend server
+
+Use Case 2
+
+Deskripsi: Sistem rekomendasi aktivitas berbasis cuaca.
+
+Manfaat Bisnis:
+
+Personalisasi layanan travel.
+
+Meningkatkan user experience.
+
+Technical Requirements:
+
+API integration
+
+Mobile/web application
+
+Data processing pipeline
+
+3. Analisis Data Tidak Terstruktur (Unstructured Data)
+3.1 Deskripsi Sumber Data
+
+Tipe Data: Teks laporan kesehatan
+
+Format: PDF
+
+Ukuran Data: ± 50–200 MB
+
+Sumber: World Health Organization Reports
+https://www.who.int/publications
+
+Contoh sample:
+https://www.who.int/publications/i/item/9789240047417
+
+3.2 Karakteristik
+Kompleksitas
+
+Bahasa alami.
+
+Paragraf panjang.
+
+Tidak memiliki struktur tabel.
+
+Storage Requirements
+
+Besar.
+
+Membutuhkan document storage.
+
+Processing Challenges
+
+Perlu NLP.
+
+Ekstraksi teks dari PDF.
+
+Named entity recognition.
+
+Data Quality Issues
+
+Ambiguitas bahasa.
+
+Istilah medis kompleks.
+
+Format dokumen berbeda.
+
+Accessibility
+
+Perlu PDF reader.
+
+Perlu text extraction tools.
+
+3.3 Potensi Use Cases
+Use Case 1
+
+Deskripsi: Analisis tren penyakit global.
+
+Manfaat Bisnis:
+
+Mendukung kebijakan kesehatan.
+
+Pengembangan obat.
+
+Technical Requirements:
+
+NLP
+
+Text mining
+
+Machine learning
+
+Use Case 2
+
+Deskripsi: Ekstraksi insight penelitian kesehatan.
+
+Manfaat Bisnis:
+
+Mendukung riset farmasi.
+
+Pengambilan keputusan kesehatan publik.
+
+Technical Requirements:
+
+NLP model
+
+Data preprocessing
+
+Knowledge extraction
+
+4. Kesimpulan dan Rekomendasi
+4.1 Ringkasan Temuan
+Structured Data
+
+Mudah dianalisis.
+
+Schema jelas.
+
+Cocok untuk analisis statistik dan bisnis.
+
+Semi-structured Data
+
+Fleksibel.
+
+Cocok untuk data real-time.
+
+Butuh preprocessing lebih.
+
+Unstructured Data
+
+Informasi paling kaya.
+
+Sulit diproses.
+
+Perlu teknologi AI/NLP.
+
+4.2 Rekomendasi
+Technical Recommendations
+
+Gunakan data warehouse untuk structured data.
+
+Gunakan API pipeline untuk semi-structured data.
+
+Gunakan NLP untuk unstructured data.
+
+Business Recommendations
+
+Gunakan structured data untuk reporting.
+
+Gunakan semi-structured untuk monitoring real-time.
+
+Gunakan unstructured untuk strategic insights.
+
+Implementation Priorities
+
+Structured data → prioritas awal.
+
+Semi-structured → integrasi sistem.
+
+Unstructured → advanced analytics.
+
+4.3 Next Steps
+Short-term Actions
+
+Download dataset sample.
+
+Setup data pipeline.
+
+Long-term Planning
+
+Implement machine learning system.
+
+Data integration platform.
+
+Resource Requirements
+
+Data engineer
+
+Data analyst
+
+Storage infrastructure
+
+5. Lampiran
+Data Samples
+
+World Bank GDP CSV sample
+https://data.worldbank.org/indicator/NY.GDP.MKTP.CD
+
+OpenWeatherMap JSON sample
+https://openweathermap.org/api
+
+WHO Report PDF sample
+https://www.who.int/publications
+
+Technical Documentation
+
+World Bank Data Docs: https://datahelpdesk.worldbank.org
+
+OpenWeather API Docs: https://openweathermap.org/current
+
+WHO Publications: https://www.who.int/publications
