@@ -277,27 +277,15 @@ Knowledge extraction
 4.1 Ringkasan Temuan
 Structured Data
 
-Mudah dianalisis.
-
-Schema jelas.
-
-Cocok untuk analisis statistik dan bisnis.
+Memiliki schema jelas, mudah dianalisis, dan cocok untuk analisis statistik.
 
 Semi-structured Data
 
-Fleksibel.
-
-Cocok untuk data real-time.
-
-Butuh preprocessing lebih.
+Fleksibel dan cocok untuk data real-time, namun membutuhkan preprocessing.
 
 Unstructured Data
 
-Informasi paling kaya.
-
-Sulit diproses.
-
-Perlu teknologi AI/NLP.
+Mengandung informasi kaya tetapi sulit diproses.
 
 4.2 Rekomendasi
 Technical Recommendations
@@ -310,32 +298,28 @@ Gunakan NLP untuk unstructured data.
 
 Business Recommendations
 
-Gunakan structured data untuk reporting.
+Structured data untuk reporting.
 
-Gunakan semi-structured untuk monitoring real-time.
+Semi-structured untuk monitoring.
 
-Gunakan unstructured untuk strategic insights.
+Unstructured untuk analisis strategis.
 
 Implementation Priorities
 
-Structured data → prioritas awal.
+Structured data
 
-Semi-structured → integrasi sistem.
+Semi-structured data
 
-Unstructured → advanced analytics.
+Unstructured data
 
 4.3 Next Steps
 Short-term Actions
 
-Download dataset sample.
-
-Setup data pipeline.
+Mengunduh dataset dan menyiapkan pipeline data.
 
 Long-term Planning
 
-Implement machine learning system.
-
-Data integration platform.
+Implementasi machine learning dan integrasi data.
 
 Resource Requirements
 
@@ -343,7 +327,7 @@ Data engineer
 
 Data analyst
 
-Storage infrastructure
+Infrastruktur penyimpanan
 
 5. Lampiran
 Data Samples
@@ -351,16 +335,33 @@ Data Samples
 World Bank GDP CSV sample
 https://data.worldbank.org/indicator/NY.GDP.MKTP.CD
 
-OpenWeatherMap JSON sample
-https://openweathermap.org/api
+OpenStreetMap Overpass JSON sample
+https://overpass-api.de/api/interpreter
+
+OpenStreetMap Overpass sample query
+https://overpass-api.de/api/interpreter?data=[out:json];node["amenity"="restaurant"](-6.2,106.8,-6.1,106.9);out;
+
+{
+  "elements": [
+    {
+      "id": 123456,
+      "lat": -6.2,
+      "lon": 106.8,
+      "tags": {
+        "name": "Restaurant A",
+        "amenity": "restaurant"
+      }
+    }
+  ]
+}
 
 WHO Report PDF sample
 https://www.who.int/publications
 
 Technical Documentation
 
-World Bank Data Docs: https://datahelpdesk.worldbank.org
+World Bank Documentation: https://datahelpdesk.worldbank.org
 
-OpenWeather API Docs: https://openweathermap.org/current
+OpenStreetMap Documentation: https://wiki.openstreetmap.org/wiki/Overpass_API
 
-WHO Publications: https://www.who.int/publications
+CDC Publications: https://www.cdc.gov/mmwr
